@@ -6,8 +6,10 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Home</title>
+        <title>Home | 7th.Dec</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <link rel="icon" type="image/png" href="https://uploads-ssl.webflow.com/612a3d9cd9c35344a2460d68/61b2181355e88e77082f397d_Myloc.svg"/>
+        <link rel="icon" type="image/png" href="https://uploads-ssl.webflow.com/612a3d9cd9c35344a2460d68/61b2181355e88e77082f397d_Myloc.svg"/>
       </Head>
       <div className="max-w-md p-8 mx-auto rounded-lg bg-coolGray-50 text-coolGray-800">
         <div className="flex justify-between space-x-8">

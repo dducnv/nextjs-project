@@ -63,6 +63,8 @@ export default function quote(){
             <Head>
                 <title>Trích Dẫn</title>
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+                <link rel="icon" type="image/png" href="https://uploads-ssl.webflow.com/612a3d9cd9c35344a2460d68/61b2181355e88e77082f397d_Myloc.svg"/>
+                <link rel="icon" type="image/png" href="https://uploads-ssl.webflow.com/612a3d9cd9c35344a2460d68/61b2181355e88e77082f397d_Myloc.svg"/>
             </Head>
             <section className="py-6 bg-violet-600 text-coolGray-50">
                 <div className="container mx-auto flex flex-col items-center justify-center p-4 space-y-8 md:p-10 md:px-24 xl:px-48">

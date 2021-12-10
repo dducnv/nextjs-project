@@ -36,6 +36,8 @@ export default function planetary() {
                 <Head>
                     <title>Hình ảnh thiên văn trong ngày</title>
                     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+                    <link rel="icon" type="image/png" href="https://uploads-ssl.webflow.com/612a3d9cd9c35344a2460d68/61b2181355e88e77082f397d_Myloc.svg"/>
+                    <link rel="icon" type="image/png" href="https://uploads-ssl.webflow.com/612a3d9cd9c35344a2460d68/61b2181355e88e77082f397d_Myloc.svg"/>
                 </Head>
                 <div className="max-w-7xl py-6 sm:py-12 mx-auto">
                     <div className="space-y-2  text-center">
@@ -75,6 +77,8 @@ export default function planetary() {
             <Head>
                 <title>Hình ảnh thiên văn trong ngày</title>
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+                <link rel="icon" type="image/png" href="https://uploads-ssl.webflow.com/612a3d9cd9c35344a2460d68/61b2181355e88e77082f397d_Myloc.svg"/>
+                <link rel="icon" type="image/png" href="https://uploads-ssl.webflow.com/612a3d9cd9c35344a2460d68/61b2181355e88e77082f397d_Myloc.svg"/>
             </Head>
             <div className="max-w-7xl py-6 sm:py-12 mx-auto">
                 <div className="space-y-2  text-center">

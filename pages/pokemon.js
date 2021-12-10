@@ -142,6 +142,8 @@ export default function pokemon(pokemon){
             <Head>
                 <title>Pokemon</title>
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+                <link rel="icon" type="image/png" href="https://uploads-ssl.webflow.com/612a3d9cd9c35344a2460d68/61b2181355e88e77082f397d_Myloc.svg"/>
+                <link rel="icon" type="image/png" href="https://uploads-ssl.webflow.com/612a3d9cd9c35344a2460d68/61b2181355e88e77082f397d_Myloc.svg"/>
             </Head>
             <section className=" max-w-7xl mx-auto py-6 sm:py-12 bg-coolGray-100 text-coolGray-800">
                 <div className="container p-6 mx-auto space-y-8">
