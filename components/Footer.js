@@ -6,7 +6,7 @@ export default function Footer(){
                 <div className="flex flex-wrap items-center justify-center py-4 space-y-4 sm:justify-between sm:space-y-0">
                     <div className="flex flex-row pr-3 space-x-4 sm:space-x-8">
                         <div className="flex items-center justify-center flex-shrink-0 w-12 h-12 rounded-full bg-violet-600">
-                            <Image
+                            <img
                                 className="h-8 w-auto sm:h-10"
                                 src="https://uploads-ssl.webflow.com/612a3d9cd9c35344a2460d68/61b2181355e88e77082f397d_Myloc.svg"
                                 alt="My Logo"
