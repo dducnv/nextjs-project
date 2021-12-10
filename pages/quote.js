@@ -17,8 +17,9 @@ export default function quote(){
             console.log(data)
         }
     }
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    useEffect(()=>{
+
+    // eslint-disable-next-line react-hooks/rules-of-hooks,react-hooks/exhaustive-deps
+    useEffect(async()=>{
         reload();
     },[]);
 

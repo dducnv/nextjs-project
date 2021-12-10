@@ -1,9 +1,11 @@
 import {useEffect, useState} from "react";
+import Image from 'next/image'
 import Link from "next/link";
 import Skeleton from 'react-loading-skeleton'
 // eslint-disable-next-line @next/next/no-document-import-in-page
 import Head from 'next/head'
 export default function pokemon(pokemon){
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     const [loading,setLoad] = useState(true)
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const [allPokemon,setAllPokemon] = useState([]);
@@ -24,8 +26,8 @@ export default function pokemon(pokemon){
         createPokemonObject(data.results)
     }
     console.log(allPokemon)
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    useEffect(()=>{
+    // eslint-disable-next-line react-hooks/rules-of-hooks,react-hooks/exhaustive-deps
+    useEffect(async ()=>{
         getAllPokemon();
     },[])
     function renderItems(){
@@ -123,7 +125,7 @@ export default function pokemon(pokemon){
                     <>
                         <article className={`flex flex-col bg-coolGray-50 ${pokemon.types[0].type.name}`}>
                             <a href="#" className="px-2 md:py-2 lg:py-2" aria-label="Te nulla oportere reprimique his dolorum">
-                                <img alt="" className="object-contain cover w-full h-52 bg-coolGray-500" src={pokemon.sprites.other.dream_world.front_default} alt={pokemon.name}/>
+                                <Image className="object-contain cover w-full h-52 bg-coolGray-500" src={pokemon.sprites.other.dream_world.front_default} alt={pokemon.name} />
                             </a>
                             <div className="flex flex-col flex-1 p-6">
                                 <a href="#" aria-label="Te nulla oportere reprimique his dolorum"></a>

@@ -2,6 +2,7 @@
 import { Fragment } from 'react'
 import { Popover, Transition } from '@headlessui/react'
 import Link from 'next/link';
+import Image from 'next/image'
 import {
     MenuIcon,
     HomeIcon,
@@ -87,7 +88,7 @@ export default function Navbar() {
                         <a href="#">
                             <span className="sr-only">Workflow</span>
                             {/* eslint-disable-next-line @next/next/no-img-element */}
-                            <img
+                            <Image
                                 className="h-8 w-auto sm:h-10"
                                 src="https://uploads-ssl.webflow.com/612a3d9cd9c35344a2460d68/61b2181355e88e77082f397d_Myloc.svg"
                                 alt="My Logo"
@@ -197,7 +198,7 @@ export default function Navbar() {
                             <div className="flex items-center justify-between">
                                 <div>
                                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                                    <img
+                                    <Image
                                         className="h-10 w-auto"
                                         src="https://uploads-ssl.webflow.com/612a3d9cd9c35344a2460d68/61b2181355e88e77082f397d_Myloc.svg"
                                         alt="My Logo"
