@@ -1,6 +1,5 @@
-import Navbar from './navbar';
-import Footer from "./Footer";
-
+import {Navbar} from './navbar';
+import {Footer} from "./Footer";
 export default function Layout({ children }) {
     return (
         <div>
