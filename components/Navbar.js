@@ -202,6 +202,7 @@ export default function Navbar() {
                                         className="h-10 w-auto"
                                         src="https://uploads-ssl.webflow.com/612a3d9cd9c35344a2460d68/61b2181355e88e77082f397d_Myloc.svg"
                                         alt="My Logo"
+
                                     />
                                 </div>
                                 <div className="-mr-2">

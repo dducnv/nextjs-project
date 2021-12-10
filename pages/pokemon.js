@@ -125,7 +125,9 @@ export default function pokemon(pokemon){
                     <>
                         <article className={`flex flex-col bg-coolGray-50 ${pokemon.types[0].type.name}`}>
                             <a href="#" className="px-2 md:py-2 lg:py-2" aria-label="Te nulla oportere reprimique his dolorum">
-                                <Image className="object-contain cover w-full h-52 bg-coolGray-500" src={pokemon.sprites.other.dream_world.front_default} alt={pokemon.name} />
+                                <img className="object-contain cover w-full h-52 bg-coolGray-500"
+                                       src={pokemon.sprites.other.dream_world.front_default}
+                                       alt={pokemon.name} />
                             </a>
                             <div className="flex flex-col flex-1 p-6">
                                 <a href="#" aria-label="Te nulla oportere reprimique his dolorum"></a>

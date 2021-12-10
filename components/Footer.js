@@ -10,6 +10,8 @@ export default function Footer(){
                                 className="h-8 w-auto sm:h-10"
                                 src="https://uploads-ssl.webflow.com/612a3d9cd9c35344a2460d68/61b2181355e88e77082f397d_Myloc.svg"
                                 alt="My Logo"
+
+
                             />
                         </div>
                         <ul className="flex flex-wrap items-center space-x-4 sm:space-x-8">

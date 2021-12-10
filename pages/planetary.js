@@ -90,10 +90,12 @@ export default function planetary() {
                     <div className="flex flex-col lg:flex-row justify-center items-strech mx-4">
                         <div className="lg:w-4/12 mt-6 md:mt-8 lg:mt-0">
                             <div className=" w-full h-full">
-                                <Image src={data.hdurl}
+                                <img src={data.hdurl}
                                      alt={data.title} role="img"
+
                                      className="w-full h-full  md:object-cover hidden lg:block"/>
-                                <Image src={data.hdurl}
+                                <img src={data.hdurl}
+
                                      alt={data.title} role="img" className="w-full object-cover h-full lg:hidden"/>
                             </div>
                         </div>
