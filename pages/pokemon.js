@@ -25,7 +25,6 @@ export default function pokemon(pokemon){
         }
         createPokemonObject(data.results)
     }
-    console.log(allPokemon)
     // eslint-disable-next-line react-hooks/rules-of-hooks,react-hooks/exhaustive-deps
     useEffect(async ()=>{
         getAllPokemon();
