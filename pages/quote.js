@@ -74,7 +74,7 @@ export default function quote(){
                         <p className="font-serif text-sm text-coolGray-600">Dữ Liệu đươc sử dụng: <a className="text-indigo-500" href={"https://github.com/lukePeavey/quotable"}>Quotable API</a></p>
                     </div>
                     {text()}
-                    <button onClick={changeQuote} disabled={loading} className="px-5 py-2 text-lg text-white rounded bg-gray-900 hover:bg-gray-700 text-coolGray-900">{!loading? 'New Quote': "Loading"}</button>
+                    <button onClick={changeQuote} disabled={loading} className="px-5 py-2 text-lg text-white rounded bg-gray-900 hover:bg-gray-700 text-coolGray-900">{!loading? 'Làm Mới': "Đang Tải..."}</button>
                 </div>
             </section>
         </>
