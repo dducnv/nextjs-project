@@ -8,7 +8,8 @@ import {
     HomeIcon,
     XIcon,
     GlobeIcon,
-    AcademicCapIcon, ChartBarIcon, ChevronDownIcon
+    AcademicCapIcon,
+    SupportIcon
 } from '@heroicons/react/outline'
 const Navlink = [
     {
@@ -56,7 +57,7 @@ const NavlinkM = [
         name: 'Pokemon',
         href: '/pokemon',
         path:'/pokemon',
-        icon: AcademicCapIcon,
+        icon: SupportIcon,
     },
 ]
 const solutions = [
