@@ -2,10 +2,11 @@ import {useState, useEffect, Fragment} from "react";
 import Skeleton from 'react-loading-skeleton'
 import {Listbox, Transition} from '@headlessui/react'
 import {CheckIcon, SelectorIcon} from '@heroicons/react/solid'
-import  {LazyLoadImage}  from 'react-lazy-load-image-component';
+import {LazyLoadImage} from 'react-lazy-load-image-component';
 import Zoom from 'react-medium-image-zoom'
 import Image from 'next/image'
 import Head from 'next/head'
+
 const axios = require('axios').default;
 
 export default function planetary() {
@@ -16,6 +17,7 @@ export default function planetary() {
     const [content, setContent] = useState('')
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const [data, setData] = useState('');
+
     function dataNasa() {
         fetchData();
 
@@ -29,7 +31,7 @@ export default function planetary() {
     }
 
     // eslint-disable-next-line react-hooks/rules-of-hooks,react-hooks/exhaustive-deps
-    useEffect( async () => {
+    useEffect(async () => {
         dataNasa();
 
     }, [])
@@ -38,14 +40,17 @@ export default function planetary() {
             <>
                 <Head>
                     <title>Hình ảnh thiên văn trong ngày</title>
-                    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-                    <link rel="icon" type="image/png" href="https://uploads-ssl.webflow.com/612a3d9cd9c35344a2460d68/61b2181355e88e77082f397d_Myloc.svg"/>
-                    <link rel="icon" type="image/png" href="https://uploads-ssl.webflow.com/612a3d9cd9c35344a2460d68/61b2181355e88e77082f397d_Myloc.svg"/>
+                    <meta name="viewport" content="initial-scale=1.0, width=device-width"/>
+                    <link rel="icon" type="image/png"
+                          href="https://uploads-ssl.webflow.com/612a3d9cd9c35344a2460d68/61b2181355e88e77082f397d_Myloc.svg"/>
+                    <link rel="icon" type="image/png"
+                          href="https://uploads-ssl.webflow.com/612a3d9cd9c35344a2460d68/61b2181355e88e77082f397d_Myloc.svg"/>
                 </Head>
                 <div className="max-w-7xl py-6 sm:py-12 mx-auto">
                     <div className="space-y-2  text-center">
                         <h2 className="text-4xl font-bold capitalize ">Hình ảnh thiên văn trong ngày</h2>
-                        <p className="font-serif text-sm text-coolGray-600">Dữ Liệu đươc sử dụng: <a className="text-indigo-500" href={"https://api.nasa.gov/"}>Nasa API</a></p>
+                        <p className="font-serif text-sm text-coolGray-600">Dữ Liệu đươc sử dụng: <a
+                            className="text-indigo-500" href={"https://api.nasa.gov/"}>Nasa API</a></p>
                     </div>
 
                     <div className=" py-9 md:py-9 lg:py-13">
@@ -79,19 +84,36 @@ export default function planetary() {
         <>
             <Head>
                 <title>Hình ảnh thiên văn trong ngày</title>
-                <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+                <meta name="viewport" content="initial-scale=1.0, width=device-width"/>
                 <meta name="description" content={content}/>
                 <meta itemProp="image" content={data.hdurl}/>
                 <meta name="keywords" content="HTML, CSS, JavaScript, reacjs, nextjs,Nasa,thiên văn"/>
                 <meta name="author" content="Nguyễn Văn Đức"/>
                 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-                <link rel="icon" type="image/png" href="https://uploads-ssl.webflow.com/612a3d9cd9c35344a2460d68/61b2181355e88e77082f397d_Myloc.svg"/>
-                <link rel="icon" type="image/png" href="https://uploads-ssl.webflow.com/612a3d9cd9c35344a2460d68/61b2181355e88e77082f397d_Myloc.svg"/>
+                <link rel="icon" type="image/png"
+                      href="https://uploads-ssl.webflow.com/612a3d9cd9c35344a2460d68/61b2181355e88e77082f397d_Myloc.svg"/>
+                <link rel="icon" type="image/png"
+                      href="https://uploads-ssl.webflow.com/612a3d9cd9c35344a2460d68/61b2181355e88e77082f397d_Myloc.svg"/>
+
+
+                <meta property="og:type" content="website"/>
+                <meta property="og:title" content={data.title}/>
+                <meta property="og:description"
+                      content={data.hdurl}/>
+                <meta property="og:image" content={content}/>
+
+
+                <meta name="twitter:card" content="summary_large_image"/>
+                <meta name="twitter:title" content={data.title}/>
+                <meta name="twitter:description"
+                      content={content}/>
+                <meta name="twitter:image" content={data.hdurl}/>
             </Head>
             <div className="max-w-7xl py-6 sm:py-12 mx-auto">
                 <div className="space-y-2  text-center">
                     <h2 className="text-4xl font-bold capitalize ">Hình ảnh thiên văn trong ngày</h2>
-                    <p className="font-serif text-sm text-coolGray-600">Dữ Liệu đươc sử dụng: <a className="text-indigo-500" href={"https://api.nasa.gov/"}>Nasa API</a></p>
+                    <p className="font-serif text-sm text-coolGray-600">Dữ Liệu đươc sử dụng: <a
+                        className="text-indigo-500" href={"https://api.nasa.gov/"}>Nasa API</a></p>
                 </div>
                 <div className=" py-9 md:py-9 lg:py-13">
                     <div className="flex flex-col lg:flex-row justify-center items-strech mx-4">
@@ -106,15 +128,15 @@ export default function planetary() {
                                         role="img"
                                     />
                                 </Zoom>
-                               <Zoom>
-                                   <LazyLoadImage
-                                       alt={data.title}
-                                       effect="blur"
-                                       src={data.hdurl}
-                                       className="w-full object-cover h-full lg:hidden"
-                                       role="img"
-                                   />
-                               </Zoom>
+                                <Zoom>
+                                    <LazyLoadImage
+                                        alt={data.title}
+                                        effect="blur"
+                                        src={data.hdurl}
+                                        className="w-full object-cover h-full lg:hidden"
+                                        role="img"
+                                    />
+                                </Zoom>
 
                             </div>
                         </div>
