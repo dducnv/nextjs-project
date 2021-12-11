@@ -21,8 +21,9 @@ export default function Home() {
       <div className="flex  z-20 items-center">
         <div className="container mx-auto px-6 flex flex-col justify-between items-center  py-4">
           <div className="flex flex-col">
-            <img
+            <LazyLoadImage
                 alt="avatar"
+                effect="blur"
                 src="https://uploads-ssl.webflow.com/612a3d9cd9c35344a2460d68/61b4ba4c8e9e68583ebecde4_127276256_1330240820660968_9032823244503499320_n.jpg"
                 className="rounded-full w-28 mx-auto"
                 role="img"
