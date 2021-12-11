@@ -23,22 +23,22 @@ export default function Footer(){
                     </div>
                     <ul className="flex flex-wrap pl-3 space-x-4 sm:space-x-8">
                         <li>
-                            <a href="#">Github</a>
+                            <a href="https://github.com/DucNV0712">Github</a>
                         </li>
                         <li>
-                            <a href="#">Instagram</a>
+                            <a href="https://www.instagram.com/nv.duc_0712_/">Instagram</a>
                         </li>
                         <li>
-                            <a href="#">Facebook</a>
+                            <a href="https://www.facebook.com/NVD_7th.dec/">Facebook</a>
                         </li>
                         <li>
-                            <a href="#">Twitter</a>
+                            <a href="https://twitter.com/Duc_isme0712">Twitter</a>
                         </li>
                     </ul>
                 </div>
                 <hr/>
                 <div className="flex  items-center justify-center px-6 pt-12 text-sm">
-                    <span className="text-coolGray-600">© Copyright 2021. All Rights Reserved.</span>
+                    <span className="text-coolGray-600">© Copyright 2021. Made By <a href="https://github.com/DucNV0712">Nguyen Van Duc</a>.</span>
                 </div>
             </footer>
         </>

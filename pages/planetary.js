@@ -108,7 +108,7 @@ export default function planetary() {
                                 </p>
                                 <p className="dark:text-white mt-4 text-xs font-medium leading-3 text-gray-600">&copy;copyright
                                     - <a
-                                        href={`https://www.google.com/search?q=` + data.copyright + `=` + data.copyright + `=edge..69i57.317j0j1&sourceid=chrome&ie=UTF-8`}>{data.copyright}</a>
+                                        href={`https://www.google.com/search?q=` + data.copyright}>{data.copyright}</a>
                                 </p>
                             </div>
                         </div>
