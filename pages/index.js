@@ -18,7 +18,7 @@ export default function Home() {
         <link rel="icon" type="image/png" href="https://uploads-ssl.webflow.com/612a3d9cd9c35344a2460d68/61b2181355e88e77082f397d_Myloc.svg"/>
       </Head>
       <main>
-      <div className="flex relative z-20 items-center">
+      <div className="flex  z-20 items-center">
         <div className="container mx-auto px-6 flex flex-col justify-between items-center relative py-4">
           <div className="flex flex-col">
             <LazyLoadImage
