@@ -1,4 +1,3 @@
-import Image from 'next/image'
 export default function Footer(){
     return(
         <>
@@ -38,7 +37,7 @@ export default function Footer(){
                 </div>
                 <hr/>
                 <div className="flex  items-center justify-center px-6 pt-12 text-sm">
-                    <span className="text-coolGray-600">© Copyright 2021. Made By <a href="https://github.com/DucNV0712">Nguyen Van Duc</a>.</span>
+                    <span className="text-coolGray-600">© Copyright 2021. Made By <a href="https://blogcuadduc.herokuapp.com/">Nguyen Van Duc</a>.</span>
                 </div>
             </footer>
         </>
