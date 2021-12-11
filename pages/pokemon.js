@@ -4,6 +4,9 @@ import Link from "next/link";
 import Skeleton from 'react-loading-skeleton'
 // eslint-disable-next-line @next/next/no-document-import-in-page
 import Head from 'next/head'
+import {LazyLoadImage} from "react-lazy-load-image-component";
+import Zoom from 'react-medium-image-zoom'
+
 export default function pokemon(pokemon){
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const [loading,setLoad] = useState(true)
@@ -124,14 +127,22 @@ export default function pokemon(pokemon){
                     <>
                         <article className={`flex flex-col bg-coolGray-50 ${pokemon.types[0].type.name}`}>
                             <a href="#" className="px-2 md:py-2 lg:py-2" aria-label="Te nulla oportere reprimique his dolorum">
-                                <img className="object-contain cover w-full h-52 bg-coolGray-500"
-                                       src={pokemon.sprites.other.dream_world.front_default}
-                                       alt={pokemon.name} />
+                                <Zoom>
+                                    <LazyLoadImage
+                                        alt={pokemon.name}
+                                        effect="blur"
+                                        src={pokemon.sprites.other.dream_world.front_default}
+                                        className="object-contain cover w-full h-52 bg-coolGray-500"
+                                        role="img"
+                                    />
+                                </Zoom>
+
+
                             </a>
                             <div className="flex flex-col flex-1 p-6">
                                 <a href="#" aria-label="Te nulla oportere reprimique his dolorum"></a>
                                 <a href="#" className="text-xs tracking-wider uppercase hover:underline text-violet-600">Type: {pokemon.types[0].type.name}</a>
-                                <h3 className="flex-1 py-2 text-lg font-semibold leading-snug">{pokemon.name}</h3>
+                                <a href="#" className="flex-1 py-2 text-lg font-semibold leading-snug">{pokemon.name}</a>
 
                             </div>
                         </article>

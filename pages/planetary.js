@@ -2,6 +2,8 @@ import {useState, useEffect, Fragment} from "react";
 import Skeleton from 'react-loading-skeleton'
 import {Listbox, Transition} from '@headlessui/react'
 import {CheckIcon, SelectorIcon} from '@heroicons/react/solid'
+import  {LazyLoadImage}  from 'react-lazy-load-image-component';
+import Zoom from 'react-medium-image-zoom'
 import Image from 'next/image'
 import Head from 'next/head'
 const axios = require('axios').default;
@@ -90,13 +92,25 @@ export default function planetary() {
                     <div className="flex flex-col lg:flex-row justify-center items-strech mx-4">
                         <div className="lg:w-4/12 mt-6 md:mt-8 lg:mt-0">
                             <div className=" w-full h-full">
-                                <img src={data.hdurl}
-                                     alt={data.title} role="img"
+                                <Zoom>
+                                    <LazyLoadImage
+                                        alt={data.title}
+                                        effect="blur"
+                                        src={data.hdurl}
+                                        className="w-full h-full  md:object-cover hidden lg:block"
+                                        role="img"
+                                    />
+                                </Zoom>
+                               <Zoom>
+                                   <LazyLoadImage
+                                       alt={data.title}
+                                       effect="blur"
+                                       src={data.hdurl}
+                                       className="w-full object-cover h-full lg:hidden"
+                                       role="img"
+                                   />
+                               </Zoom>
 
-                                     className="w-full h-full  md:object-cover hidden lg:block"/>
-                                <img src={data.hdurl}
-
-                                     alt={data.title} role="img" className="w-full object-cover h-full lg:hidden"/>
                             </div>
                         </div>
                         <div className="lg:w-8/12 flex justify-center md:px-10">
