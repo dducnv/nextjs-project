@@ -80,6 +80,11 @@ export default function planetary() {
             <Head>
                 <title>Hình ảnh thiên văn trong ngày</title>
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+                <meta name="description" content={content}/>
+                <meta itemProp="image" content={data.hdurl}/>
+                <meta name="keywords" content="HTML, CSS, JavaScript, reacjs, nextjs,Nasa,thiên văn"/>
+                <meta name="author" content="Nguyễn Văn Đức"/>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
                 <link rel="icon" type="image/png" href="https://uploads-ssl.webflow.com/612a3d9cd9c35344a2460d68/61b2181355e88e77082f397d_Myloc.svg"/>
                 <link rel="icon" type="image/png" href="https://uploads-ssl.webflow.com/612a3d9cd9c35344a2460d68/61b2181355e88e77082f397d_Myloc.svg"/>
             </Head>
