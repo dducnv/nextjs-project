@@ -2,6 +2,7 @@ import {useState,useEffect} from "react";
 import Skeleton from 'react-loading-skeleton'
 // eslint-disable-next-line @next/next/no-document-import-in-page
 import Head from 'next/head'
+import Header from "../components/Head";
 export default function quote(){
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const [loading,setLoad] = useState(true)
@@ -61,12 +62,7 @@ export default function quote(){
     }
     return(
         <>
-            <Head>
-                <title>Trích Dẫn</title>
-                <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-                <link rel="icon" type="image/png" href="https://uploads-ssl.webflow.com/612a3d9cd9c35344a2460d68/61b2181355e88e77082f397d_Myloc.svg"/>
-                <link rel="icon" type="image/png" href="https://uploads-ssl.webflow.com/612a3d9cd9c35344a2460d68/61b2181355e88e77082f397d_Myloc.svg"/>
-            </Head>
+            <Header title="Trích Dẫn" href="" img="https://uploads-ssl.webflow.com/612a3d9cd9c35344a2460d68/616fea3cb4886891f2960f80_logo7th.png" desc=""/>
             <section className="py-6 bg-violet-600 text-coolGray-50">
                 <div className="container mx-auto flex flex-col items-center justify-center p-4 space-y-8 md:p-10 md:px-24 xl:px-48">
                     <div className="space-y-2 text-center">
