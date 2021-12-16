@@ -77,7 +77,7 @@ const pc = [
         href: '/office',
         path:'/office',
         icon: DocumentDuplicateIcon,
-        description: 'Get a better understanding of where your traffic is coming from.',
+        description: 'Tổng hợp các bộ office',
     },
 
 ]
@@ -204,7 +204,7 @@ export default function Navbar() {
                         <div className="rounded-lg shadow-lg ring-1 relative ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
                             <div className="pt-5 pb-6 px-5">
                                 <div className="flex items-center justify-between">
-                                    <div></div>
+
                                {/*     <div>
                                          eslint-disable-next-line @next/next/no-img-element
                                         <img

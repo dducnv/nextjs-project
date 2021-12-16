@@ -1,6 +1,7 @@
 import Header from "../components/Head";
 
-export default function OperatingSystem() {
+export default function OperatingSystem(){
+
     const win = [
         {
             imgUrl:"https://res.cloudinary.com/blogcuaduc/image/upload/v1639644959/cua-toi/windows-11-icon-logo-6C39629E45-seeklogo.com_f3qt1r.png",
@@ -64,7 +65,8 @@ export default function OperatingSystem() {
             <Header
                 title={'Hệ Điều Hành Dành Cho Máy Tính'}
                 img={'https://res.cloudinary.com/blogcuaduc/image/upload/v1639644959/cua-toi/windows-11-icon-logo-6C39629E45-seeklogo.com_f3qt1r.png'}
-                desc={''}
+                desc={'Tổng hợp link tải các hệ điều hành đang phổ biến hiện nay như Windows, Linux'}
+                href={''}
             />
 
             <div className=" max-w-7xl mx-auto py-6 sm:py-12">
@@ -86,7 +88,7 @@ export default function OperatingSystem() {
                         <>
                             <article className="flex flex-col bg-coolGray-50 mb-3">
 
-                                <div className="shadow-lg rounded-2xl w-100 p-3 bg-white dark:bg-gray-800">
+                                <div className="shadow-lg border-t-2 rounded-2xl w-100 p-3 bg-white dark:bg-gray-800">
                                     <div className="flex flex-row items-start gap-4">
                                         <img src={res.imgUrl} className="w-28 h-28 rounded-lg"/>
 
@@ -122,14 +124,22 @@ export default function OperatingSystem() {
                                         </div>
                                     </div>
                                     <div className="flex items-center justify-between gap-4 mt-6">
-                                        <a href={res.url32}
+                                        <button
+                                            onClick={(e) => {
+                                                e.preventDefault();
+                                                window.location.href=res.url32;
+                                            }}
                                             className="w-1/2 px-3 py-2 text-base border rounded-lg text-grey-500 bg-white hover:bg-gray-200 ">
                                             32-bit (x86)
-                                        </a>
-                                        <a href={res.url64}
+                                        </button>
+                                        <button
+                                            onClick={(e) => {
+                                                e.preventDefault();
+                                                window.location.href=res.url64;
+                                            }}
                                            className="w-1/2 px-3 py-2 text-base border rounded-lg text-white bg-indigo-500 hover:bg-indigo-700 ">
                                             64-bit (x64)
-                                        </a>
+                                        </button>
                                     </div>
                                 </div>
 
