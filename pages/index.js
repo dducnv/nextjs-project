@@ -20,7 +20,7 @@ export default function Home() {
       <main>
       <div className="flex  z-20 items-center">
         <div className="container mx-auto px-6 flex flex-col justify-between items-center  py-4">
-          <div className="flex flex-col">
+          <div className="flex flex-col mt-8">
             <LazyLoadImage
                 alt="avatar"
                 effect="blur"
@@ -28,13 +28,13 @@ export default function Home() {
                 className="rounded-full w-28 mx-auto"
                 role="img"
             />
-            <p className="text-3xl my-6 text-center dark:text-white">
+            <p className="text-3xl my-6 text-center my-name font-secondary dark:text-white">
               Hi, I&#x27;m Nguyen Van Duc 🤘
             </p>
-            <h2 className="max-w-3xl text-5xl md:text-6xl font-bold mx-auto dark:text-white text-gray-800 text-center py-2">
-              Welcome To My Web
+            <h2 className="max-w-3xl typing-animation font-secondary text-5xl md:text-6xl font-bold mx-auto dark:text-white text-gray-800 text-center py-2">
+              Welcome To My Web!
             </h2>
-            <div className="flex items-center justify-center mt-4">
+            <div className="flex font-secondary items-center justify-center mt-4">
               <a href="https://blogcuadduc.herokuapp.com/" className="uppercase py-2 my-2 px-4 md:mt-16 bg-transparent dark:text-gray-800 dark:bg-white hover:dark:bg-gray-100 border-2 border-gray-800 text-gray-800 dark:text-white hover:bg-gray-800 hover:text-white text-md">
                 My Web
               </a>
