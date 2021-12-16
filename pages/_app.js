@@ -8,7 +8,6 @@ import Header from "../components/Head";
 function MyApp({ Component, pageProps }) {
   return (
       <Layout>
-          <Header/>
         <Component {...pageProps} />
       </Layout>
   )
