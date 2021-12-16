@@ -1,18 +1,56 @@
+import Header from "../components/Head";
+
 export default function OperatingSystem() {
-    const win10 = [
+    const win = [
         {
-            imgUrl:"https://res.cloudinary.com/blogcuaduc/image/upload/v1639640658/cua-toi/window-10-logo-vector_tuhxkq.png",
+            imgUrl:"https://res.cloudinary.com/blogcuaduc/image/upload/v1639644959/cua-toi/windows-11-icon-logo-6C39629E45-seeklogo.com_f3qt1r.png",
+            name:"Windows 11",
+            ver:"22000.318-EN",
+            url64:"https://tb.rg-adguard.net/dl.php?go=b1fb62af",
+            url32:"unknown",
+            size64:"5,3GB",
+            size32:"unk",
+        },
+        {
+            imgUrl:"https://res.cloudinary.com/blogcuaduc/image/upload/v1639645076/cua-toi/132px-Windows_logo_-_2012.svg_ljruwz.png",
             name:"Windows 10",
-            ver:"21H2",
-            url64:"https://drive.google.com/file/d/1kKRf2AzZQVzshNsMhpyLi7DDTDh4mq8w/view?usp=sharing",
-            url32:"https://drive.google.com/file/d/1IORW7JJDZ3QUfafmSmX2pDSZ81HW9xl6/view?usp=sharing",
+            ver:"21H2-EN",
+            url64:"https://tb.rg-adguard.net/dl.php?go=ba3275f9",
+            url32:"https://tb.rg-adguard.net/dl.php?go=994ec424",
             size64:"5,48GB",
             size32:"3,9GB",
         },
         {
-            imgUrl:"https://res.cloudinary.com/blogcuaduc/image/upload/v1639640588/cua-toi/windows-7-logo-vector-01_fwtg63.png",
+            imgUrl:"https://res.cloudinary.com/blogcuaduc/image/upload/v1639645076/cua-toi/132px-Windows_logo_-_2012.svg_ljruwz.png",
+            name:"Windows 10",
+            ver:"19H2-EN",
+            url64:"https://tb.rg-adguard.net/dl.php?go=981c4d21",
+            url32:"https://tb.rg-adguard.net/dl.php?go=2dbfa165",
+            size64:"5,1GB",
+            size32:"3,6GB",
+        },
+        {
+            imgUrl:"https://res.cloudinary.com/blogcuaduc/image/upload/v1639645076/cua-toi/132px-Windows_logo_-_2012.svg_ljruwz.png",
+            name:"Windows 10 LTSC",
+            ver:"2021-EN",
+            url64:"https://msnvns0-my.sharepoint.com/personal/anhtuanle_s0_msnvn_org/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fanhtuanle%5Fs0%5Fmsnvn%5Forg%2FDocuments%2FWindows%2FWin10%2FLTSB%20%26%20LTSC%2FLTSC%2Fen%2Dus%5Fwindows%5F10%5Fenterprise%5Fltsc%5F2021%5Fx64%5Fdvd%5Fd289cf96%2Eiso&parent=%2Fpersonal%2Fanhtuanle%5Fs0%5Fmsnvn%5Forg%2FDocuments%2FWindows%2FWin10%2FLTSB%20%26%20LTSC%2FLTSC",
+            url32:"https://msnvns0-my.sharepoint.com/personal/anhtuanle_s0_msnvn_org/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fanhtuanle%5Fs0%5Fmsnvn%5Forg%2FDocuments%2FWindows%2FWin10%2FLTSB%20%26%20LTSC%2FLTSC%2Fen%2Dus%5Fwindows%5F10%5Fenterprise%5Fltsc%5F2021%5Fx86%5Fdvd%5F9f4aa95f%2Eiso&parent=%2Fpersonal%2Fanhtuanle%5Fs0%5Fmsnvn%5Forg%2FDocuments%2FWindows%2FWin10%2FLTSB%20%26%20LTSC%2FLTSC",
+            size64:"unk",
+            size32:"unk",
+        },
+        {
+            imgUrl:"https://res.cloudinary.com/blogcuaduc/image/upload/v1639645076/cua-toi/132px-Windows_logo_-_2012.svg_ljruwz.png",
+            name:"Windows 10 LTSC",
+            ver:"2019-EN",
+            url64:"https://msnvns0-my.sharepoint.com/personal/anhtuanle_s0_msnvn_org/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fanhtuanle%5Fs0%5Fmsnvn%5Forg%2FDocuments%2FWindows%2FWin10%2FLTSB%20%26%20LTSC%2FLTSC%2Fen%5Fwindows%5F10%5Fenterprise%5Fltsc%5F2019%5Fx64%5Fdvd%5F74865958%2Eiso&parent=%2Fpersonal%2Fanhtuanle%5Fs0%5Fmsnvn%5Forg%2FDocuments%2FWindows%2FWin10%2FLTSB%20%26%20LTSC%2FLTSC",
+            url32:"https://drive.google.com/file/d/14bfhyydKLirGOTtKAOI2zRDn-rDLfj_n/view",
+            size64:"unk",
+            size32:"unk",
+        },
+        {
+            imgUrl:"https://res.cloudinary.com/blogcuaduc/image/upload/v1639645012/cua-toi/69830_qdgi4m.png",
             name:"Windows 7",
-            ver:"ultimate",
+            ver:"ultimate-EN",
             url64:"https://drive.google.com/file/d/1o7ZkLQIuqcwOjfoqFbM2YP-ZngCO5Xkj/view?usp=sharing",
             url32:"https://drive.google.com/file/d/1d2mnADrZn5DvwPUcIc9QTKCfjNO0SUyS/view?usp=sharing",
             size64:"3,9GB",
@@ -23,6 +61,11 @@ export default function OperatingSystem() {
 
     return (
         <>
+            <Header
+                title={'Hệ Điều Hành Dành Cho Máy Tính'}
+                img={'https://res.cloudinary.com/blogcuaduc/image/upload/v1639644959/cua-toi/windows-11-icon-logo-6C39629E45-seeklogo.com_f3qt1r.png'}
+                desc={''}
+            />
 
             <div className=" max-w-7xl mx-auto py-6 sm:py-12">
                 <p className="text-center text-3xl font-bold text-gray-800 dark:text-white">
@@ -38,10 +81,10 @@ export default function OperatingSystem() {
                         <span className="block  text-indigo-600">Hãy Chon Phiên Bản Phù Hợp Với Máy Tính.</span>
                     </h2>
                 </div>
-                <div className="grid grid-cols-2 gap-x-4 gap-y-8 md:grid-cols-3 lg:grid-cols-4">
-                    {win10.map(res => (
+                <div className="grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-3 lg:grid-cols-4">
+                    {win.map(res => (
                         <>
-                            <article className="flex flex-col bg-coolGray-50">
+                            <article className="flex flex-col bg-coolGray-50 mb-3">
 
                                 <div className="shadow-lg rounded-2xl w-100 p-3 bg-white dark:bg-gray-800">
                                     <div className="flex flex-row items-start gap-4">
@@ -50,7 +93,7 @@ export default function OperatingSystem() {
                                         <div className="h-28 w-full flex flex-col justify-between">
                                             <div>
                                                 <p className="text-gray-800 dark:text-white text-xl font-medium">
-                                                    {res.name}
+                                                    {res.name}-{res.ver}
                                                 </p>
                                                 <p className="text-gray-400 text-xs">
                                                     version: {res.ver}
