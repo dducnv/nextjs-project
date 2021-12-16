@@ -188,7 +188,7 @@ export default function Office() {
                     Tổng Hợp Link Tải Bộ Microsoft Office
                 </p>
                 <p className="text-center mb-12 mt-4 text-xl font-normal text-gray-500 dark:text-gray-300">
-                    Tất cả tệp tin không gây hại cho máy tinh.
+                    Tất cả tệp tin không gây hại cho máy tính.
                 </p>
                 <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center ">
 
