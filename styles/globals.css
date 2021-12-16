@@ -39,36 +39,37 @@ body{
     background-color:#E0F1FD;
 }
 /*text animation*/
-.my-name{
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    animation: text-name 3s 1;
-}
-@keyframes text-name {
-    0% {
-        color: #fff;
+@media only screen and (min-width: 450px) {
+    .my-name{
+        letter-spacing: 1px;
+        animation: text-name 3s 1;
+    }
+    @keyframes text-name {
+        0% {
+            color: #fff;
+        }
+
+        30% {
+            color: #000;
+        }
+    }
+    .typing-animation{
+        width: 19ch;
+        animation: typing 3s steps(22), blink .5s step-end infinite alternate;
+        white-space: nowrap;
+        overflow: hidden;
+        border-right: 3px solid;
+        font-family: monospace;
+    }
+    @keyframes typing {
+        from {
+            width: 0
+        }
     }
 
-    30% {
-        color: #000;
-    }
-}
-.typing-animation{
-    width: 19ch;
-    animation: typing 3s steps(22), blink .5s step-end infinite alternate;
-    white-space: nowrap;
-    overflow: hidden;
-    border-right: 3px solid;
-    font-family: monospace;
-}
-@keyframes typing {
-    from {
-        width: 0
-    }
-}
-
-@keyframes blink {
-    50% {
-        border-color: transparent
+    @keyframes blink {
+        50% {
+            border-color: transparent
+        }
     }
 }
