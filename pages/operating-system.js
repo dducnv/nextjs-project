@@ -66,7 +66,7 @@ export default function OperatingSystem(){
                 title={'Hệ Điều Hành Dành Cho Máy Tính'}
                 img={'https://res.cloudinary.com/blogcuaduc/image/upload/v1639644959/cua-toi/windows-11-icon-logo-6C39629E45-seeklogo.com_f3qt1r.png'}
                 desc={'Tổng hợp link tải các hệ điều hành đang phổ biến hiện nay như Windows, Linux'}
-                href={''}
+                href={'https://sat-7thdec.herokuapp.com/operating-system'}
             />
 
             <div className=" max-w-7xl mx-auto py-6 sm:py-12">
