@@ -12,6 +12,7 @@ export default function Header({title, desc, img, href}) {
                 <meta httpEquiv="Content-Type" content="text/html; charset=utf-8"/>
                 <meta name="description" content={desc}/>
                 <meta itemProp="image" content={img}/>
+                <meta name="p:domain_verify" content="bfb41b683c277f1dc8778c72d5670429"/>
                 <link rel="icon" type="image/png"
                       href="https://uploads-ssl.webflow.com/612a3d9cd9c35344a2460d68/61b2181355e88e77082f397d_Myloc.svg"/>
                 <link rel="icon" type="image/png"
