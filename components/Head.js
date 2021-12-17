@@ -2,8 +2,6 @@ import Head from 'next/head'
 import {useRouter} from 'next/router'
 
 export default function Header({title, desc, img, href}) {
-    const router = useRouter()
-    console.log(router)
     return (
         <>
             <Head>
