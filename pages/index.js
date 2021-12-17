@@ -7,7 +7,7 @@ import Header from "../components/Head";
 export default function Home() {
   return (
     <>
-     <Header desc="" img="https://uploads-ssl.webflow.com/612a3d9cd9c35344a2460d68/616fea3cb4886891f2960f80_logo7th.png" title="Home | 7th.Dec"/>
+     <Header desc="web này để chia sẻ nhưng cái kỳ quái mang tầm vũ trụ, nó giúp cho chúng ta khai sang tâm hồn dánh thức con hổ trong người. Web còn tổng hợp các link tải phần mềm và một số thứ vớ vẩn khác tôi làm cho trang web này =))" href={'https://sat-7thdec.herokuapp.com'} img="https://uploads-ssl.webflow.com/612a3d9cd9c35344a2460d68/616fea3cb4886891f2960f80_logo7th.png" title="Home | 7th.Dec"/>
       <main>
       <div className="flex  z-20 items-center">
         <div className="container mx-auto px-6 flex flex-col justify-between items-center  py-4">
