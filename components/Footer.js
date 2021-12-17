@@ -25,10 +25,7 @@ export default function Footer(){
                             <a href="https://github.com/DucNV0712">Github</a>
                         </li>
                         <li>
-                            <a href="https://www.instagram.com/nv.duc_0712_/">Instagram</a>
-                        </li>
-                        <li>
-                            <a href="https://www.facebook.com/NVD_7th.dec/">Facebook</a>
+                            <a href="https://www.pinterest.com/Duc_Isme0712">Pinterest</a>
                         </li>
                         <li>
                             <a href="https://twitter.com/Duc_isme0712">Twitter</a>
