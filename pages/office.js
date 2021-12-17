@@ -177,7 +177,7 @@ export default function Office() {
     return (
         <>
             <Header
-                title={'Tổng Hợp Các Bộ Office | Tải và cài đặt các bộ office, tổng hợp các key kick hoạt'}
+                title={'Tổng Hợp Các Bộ Office | Tải và cài đặt các bộ office, tổng hợp các key kích hoạt'}
                 img={'https://res.cloudinary.com/blogcuaduc/image/upload/v1639659502/cua-toi/office-365_256x256_y4l6ik.png'}
                 desc={'Link cài đặt,Key kích hoạt Microsoft 365 hoặc Office 2021, Office 2016, Office 2013 trên Windows hoặc Mac. ' +
                     'Microsoft Office mang đến cho bạn tất cả Word, Excel và PowerPoint trong một ứng dụng. Tận dụng trải nghiệm liền mạch với các công cụ của Microsoft khi đang di chuyển với Ứng dụng Office, giải pháp đơn giản cho năng suất.Quét tệp PDF, tạo bảng tính hoặc soạn thảo tài liệu mọi lúc và mọi nơi bằng cách truy cập các chức năng Office tích hợp thông qua thiết bị di động của bạn. Hoàn thành quy trình công việc của bạn'}
