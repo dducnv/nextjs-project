@@ -93,15 +93,18 @@ export default function Navbar() {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6">
                     <div className="flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
                         <div className="flex justify-start lg:w-0 lg:flex-1">
-                            <a href="#">
-                                <span className="sr-only">Workflow</span>
-                                {/* eslint-disable-next-line @next/next/no-img-element */}
-                                <img
-                                    className="h-8 w-auto sm:h-10"
-                                    src={`https://uploads-ssl.webflow.com/612a3d9cd9c35344a2460d68/61b2181355e88e77082f397d_Myloc.svg`}
-                                    alt="My Logo"
-                                />
-                            </a>
+                            <Link href={'/'}>
+                                <a>
+                                    <span className="sr-only">Workflow</span>
+                                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                                    <img
+                                        className="h-8 w-auto sm:h-10"
+                                        src={`https://uploads-ssl.webflow.com/612a3d9cd9c35344a2460d68/61b2181355e88e77082f397d_Myloc.svg`}
+                                        alt="My Logo"
+                                    />
+                                </a>
+
+                            </Link>
                         </div>
                         <div className="-mr-2 -my-2 md:hidden">
                             <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
