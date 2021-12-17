@@ -26,7 +26,7 @@ export default function Header({title, desc, img, href}) {
                 <meta property="og:title" content={title}/>
                 <meta property="og:description"
                       content={desc}/>
-                <meta property="og:image" content={desc}/>
+                <meta property="og:image" content={img}/>
                 <meta property="og:site_name" content="7th.Dec Hệ Điều Hành"/>
 
                 <meta name="twitter:card" content="summary_large_image"/>

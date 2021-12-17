@@ -194,7 +194,7 @@ export default function Office() {
 
                     <h2 className="ml-4 font-extrabold tracking-tight text-gray-900 ">
                         <span className="block text-3xl sm:text-4xl">Microsoft Office</span>
-                        <span className="block  text-indigo-600">Hãy Chon Phiên Bản Phù Hợp Với Máy Tính.</span>
+                        <span className="block  text-indigo-600">Hãy Chọn Phiên Bản Phù Hợp Với Máy Tính.</span>
                     </h2>
                 </div>
                 {office.map(item =>(
