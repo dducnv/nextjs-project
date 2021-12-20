@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {toast} from "react-hot-toast";
+import Header from "../components/Head";
 
 const {
     getDownloadUrl,
@@ -104,6 +105,7 @@ export default class YoutubeDownload extends React.Component {
         const {downloadUrl, focus, suggestions, currentVideoInfo} = this.state;
         return (
             <>
+                <Header title="Tải Video và Audio từ Youtube | 7th.Dec" desc="Tải Video và Audio từ Youtube" img="https://res.cloudinary.com/blogcuaduc/image/upload/v1639993655/cua-toi/download_q26igk.png"/>
                 <div className=" max-w-7xl mx-auto bg-white p-12">
                     <p className="text-center text-3xl font-bold text-gray-800 dark:text-white">
                         Youtube Download
@@ -135,7 +137,7 @@ export default class YoutubeDownload extends React.Component {
                                             <input
                                                 type="radio"
                                                 name="format"
-                                                value={format.name}
+                                                value={format.id}
                                                 onChange={this.handleChange}
                                                 id={format.id}
                                                 className="h-5 w-5 text-red-600"
