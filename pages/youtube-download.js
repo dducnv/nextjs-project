@@ -10,12 +10,12 @@ const {getInfos, getSuggestions} = require('./../utils/API');
 const formats = [
     {
         id: 'mp4',
-        name: 'mp4 - video',
+        name: 'mp4-video',
         isChecked: true,
     },
     {
         id: 'mp3',
-        name: 'mp3 - audio',
+        name: 'mp3-audio',
     }
 ];
 
