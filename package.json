@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "nodemon server/index.js",
     "build": "next build",
-    "start": "next start -p $PORT",
+    "start": "nodemon server/index.js",
     "lint": "next lint",
     "heroku-postbuild": "npm run build"
   },
