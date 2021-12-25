@@ -18,6 +18,13 @@ export default function Footer(){
                             <li>
                                 <a href="#">Privacy</a>
                             </li>
+                            <li>
+                                <a href="//www.dmca.com/Protection/Status.aspx?ID=063ebc53-79c1-4c35-bbe0-8ae957f029d2"
+                                   title="DMCA.com Protection Status" className="dmca-badge"> <img
+                                    src="https://images.dmca.com/Badges/dmca_protected_sml_120t.png?ID=063ebc53-79c1-4c35-bbe0-8ae957f029d2"
+                                    alt="DMCA.com Protection Status"/></a>
+                                <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"></script>
+                            </li>
                         </ul>
                     </div>
                     <ul className="flex flex-wrap pl-3 space-x-4 sm:space-x-8">
