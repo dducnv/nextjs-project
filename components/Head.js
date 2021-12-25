@@ -46,6 +46,8 @@ export default function Header({title, desc, img, href}) {
                     `,
                     }}
                 />
+                <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"/>
+
             </Head>
 
 
