@@ -8,6 +8,7 @@ const nextConfig = {
     images: {domains: [
         'apod.nasa.gov',
         'uploads-ssl.webflow.com',
+        'images.dmca.com'
       ]}
 }
 

@@ -18,6 +18,11 @@ const formats = [
         id: 'mp3',
         name: 'mp3-audio',
     }
+    ,
+    {
+        id: 'mov',
+        name: 'mov-video',
+    }
 ];
 
 export default class YoutubeDownload extends React.Component {
@@ -64,7 +69,7 @@ export default class YoutubeDownload extends React.Component {
         const {data, success} = await getSuggestions(input);
         if (success) {
             this.setState({suggestions: data, currentVideoInfo: undefined});
-            console.log(data);
+            console.log('data',data);
         }
     };
 
@@ -77,6 +82,7 @@ export default class YoutubeDownload extends React.Component {
         if (success) {
             toast.success('Successfully!')
             const downloadUrl = getDownloadUrl(videoUrl, format);
+            console.log('data ', downloadUrl);
             const videoInfo = {
                 title: data.videoDetails.title,
                 videoId: data.videoDetails.videoId,
@@ -97,7 +103,6 @@ export default class YoutubeDownload extends React.Component {
     };
 
     handleDownloadClick = (videoId) => {
-        console.log(videoId);
         this.download(videoId);
     };
 
@@ -164,7 +169,6 @@ export default class YoutubeDownload extends React.Component {
                                 <p className="text-center text-3xl font-bold text-gray-800 dark:text-white">
                                     {currentVideoInfo.title}
                                 </p>
-
                                 <img
                                     className="text-center m-auto mt-4"
                                     src={`https://i.ytimg.com/vi/${currentVideoInfo.videoId}/hqdefault.jpg`}

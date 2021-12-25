@@ -12,7 +12,9 @@ const reqOptions = {
         },
     },
 };
+
 class ApiController{
+
     async suggestions(req, res) {
         const {search} = req.query;
         const options = {
@@ -56,14 +58,16 @@ class ApiController{
             format = f;
         }
         try {
-            const result = await ytdl.getBasicInfo(url, reqOptions);
+            const info = await ytdl.getBasicInfo(url,reqOptions);
+            console.log(info)
             const {
                 videoDetails: {title},
-            } = result;
+            } = info;
             res.setHeader(
                 'Content-disposition',
                 contentDisposition(`${title}.${format}`)
             );
+            // console.log(res)
             ytdl(url, {format, ...reqOptions})
                 .on('progress', (chunkLength, downloaded, total) => {
                     // const download = (downloaded / 1024 / 1024).toFixed(2);
