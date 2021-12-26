@@ -69,7 +69,7 @@ export default class YoutubeDownload extends React.Component {
         const {data, success} = await getSuggestions(input);
         if (success) {
             this.setState({suggestions: data, currentVideoInfo: undefined});
-            console.log('data',data);
+            // console.log('data',data);
         }
     };
 
@@ -82,7 +82,7 @@ export default class YoutubeDownload extends React.Component {
         if (success) {
             toast.success('Successfully!')
             const downloadUrl = getDownloadUrl(videoUrl, format);
-            console.log('data ', downloadUrl);
+            // console.log('data ', downloadUrl);
             const videoInfo = {
                 title: data.videoDetails.title,
                 videoId: data.videoDetails.videoId,
