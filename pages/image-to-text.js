@@ -42,7 +42,7 @@ const langs = [
     },
 ]
 export default function ImageToText() {
-    const [selected, setSelected] = useState(langs[1])
+    const [selected, setSelected] = useState(langs[0])
     const [imagePath, setImagePath] = useState("");
     const [text, setText] = useState("");
     const [selectedFile, setSelectedFile] = useState()
@@ -85,7 +85,7 @@ export default function ImageToText() {
             toast.promise(
                 data,
                 {
-                    loading: 'Đang Tải...',
+                    loading: 'Đang Chuyển Đổi...',
                     success: <b>Thành Công!</b>,
                     error: <b>Vui Lòng Thử Lại.</b>,
                 }
@@ -103,11 +103,9 @@ export default function ImageToText() {
         setImagePath('')
     }
     return (
-
         <>
             <div><Toaster/></div>
-            <Header/>
-
+            <Header title={'Chuyển Ảnh Thành Văn Bản'} desc={'Phát hiện và xuất các văn bản có chứa trong hình ảnh và dễ dàng copy.'} img={'https://res.cloudinary.com/blogcuaduc/image/upload/v1641128846/cua-toi/lrb6bfewy7uxne53w4fn.png'}/>
             <div className="max-w-7xl py-6 sm:py-12 mx-auto">
                 <div className="space-y-2  text-center">
                     <h2 className="text-4xl font-bold capitalize ">Chuyển Ảnh Thành Văn Bản</h2>
@@ -117,7 +115,7 @@ export default function ImageToText() {
                 <div
                     className={imagePath === "" || imagePath == null ? "my-6 lg:my-12 container px-6 mx-auto flex flex-col lg:flex-row items-start lg:items-center justify-between pb-4" : "my-6 lg:my-12 container px-6 mx-auto flex flex-col lg:flex-row items-start lg:items-center justify-between pb-4 border-b border-gray-300"}>
                     <div/>
-                    <div className="mt-6 lg:mt-0 flex items-center">
+                    <div className="mt-6 lg:mt-0 lg:flex items-center">
 
                         {imagePath === "" || imagePath == null ? "" :
                             <>
@@ -196,7 +194,7 @@ export default function ImageToText() {
                                 </Listbox>
                                 <button
                                     onClick={clearData}
-                                    className="transition mx-2 duration-150 ease-in-out hover:bg-red-600 focus:outline-none border bg-red-700 rounded text-white px-8 py-2 text-sm">
+                                    className="transition mt-3 lg:mt-0 mx-2 duration-150 ease-in-out hover:bg-red-600 focus:outline-none border bg-red-700 rounded text-white px-8 py-2 text-sm">
                                     Xoá
                                 </button>
                             </>
@@ -205,7 +203,7 @@ export default function ImageToText() {
                         {!text === "" || !text == null | imagePath === "" || imagePath == null ? "" :
                             <button
                                 onClick={handleClick}
-                                className="transition mx-2 duration-150 ease-in-out hover:bg-indigo-600 focus:outline-none border bg-indigo-700 rounded text-white px-8 py-2 text-sm">
+                                className="transition mt-3 lg:mt-0 mx-2 duration-150 ease-in-out hover:bg-indigo-600 focus:outline-none border bg-indigo-700 rounded text-white px-8 py-2 text-sm">
                                 Chuyển Đổi
                             </button>
                         }
@@ -236,10 +234,20 @@ export default function ImageToText() {
                                             alt={imagePath}
                                             effect="blur"
                                             src={imagePath}
-                                            className="relative  object-cover d h-full rounded-lg border-dashed  bg-gray-100 flex justify-center items-center"
+                                            className="w-full h-full object-cover  md:object-cover hidden lg:block"
                                             role="img"
                                         />
                                     </Zoom>
+                                    <Zoom>
+                                        <LazyLoadImage
+                                            alt={imagePath}
+                                            effect="blur"
+                                            src={imagePath}
+                                            className="w-full object-cover object-cover h-full lg:hidden"
+                                            role="img"
+                                        />
+                                    </Zoom>
+
                                 </div>
 
                             }

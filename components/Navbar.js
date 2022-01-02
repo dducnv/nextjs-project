@@ -14,7 +14,8 @@ import {
     DocumentDuplicateIcon,
     DesktopComputerIcon,
     DownloadIcon,
-    LibraryIcon
+    LibraryIcon,
+    DocumentTextIcon
 } from '@heroicons/react/outline'
 
 const Navlink = [
@@ -70,7 +71,7 @@ const NavlinkM = [
         name: 'Chuyển Ảnh Thành Văn Bản',
         href: '/image-to-text',
         path: '/image-to-text',
-        icon: SupportIcon,
+        icon: DocumentTextIcon,
     },
     {
         name: 'English Dictionary',
@@ -109,8 +110,8 @@ const utilities = [
         name: 'Chuyển Ảnh Thành Văn Bản',
         href: '/image-to-text',
         path: '/image-to-text',
-        icon: LibraryIcon,
-        description: 'Nhận các định nghĩa và bản thu phát âm rõ ràng về các từ, các cụm từ và thành ngữ trong tiếng Anh',
+        icon: DocumentTextIcon,
+        description: 'Phát hiện và xuất các văn bản có chứa trong hình ảnh và dễ dàng copy.',
     },
     {
         name: 'English Dictionary',
