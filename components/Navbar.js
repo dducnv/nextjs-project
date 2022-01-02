@@ -67,6 +67,12 @@ const NavlinkM = [
         icon: SupportIcon,
     },
     {
+        name: 'Chuyển Ảnh Thành Văn Bản',
+        href: '/image-to-text',
+        path: '/image-to-text',
+        icon: SupportIcon,
+    },
+    {
         name: 'English Dictionary',
         href: '/english-dictionary',
         path: '/english-dictionary',
@@ -98,6 +104,13 @@ const utilities = [
         path: '/youtube-download',
         icon: DownloadIcon,
         description: 'Tải Video và Audio từ Youtube.',
+    },
+    {
+        name: 'Chuyển Ảnh Thành Văn Bản',
+        href: '/image-to-text',
+        path: '/image-to-text',
+        icon: LibraryIcon,
+        description: 'Nhận các định nghĩa và bản thu phát âm rõ ràng về các từ, các cụm từ và thành ngữ trong tiếng Anh',
     },
     {
         name: 'English Dictionary',
