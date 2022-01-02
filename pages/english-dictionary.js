@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from "react";
 import {PaperClipIcon} from "@heroicons/react/outline";
 import {toast, Toaster} from "react-hot-toast";
-import Skeleton from 'react-loading-skeleton'
+import Skeleton from 'react-loading-skeleton';
 import {
     VolumeUpIcon
-} from '@heroicons/react/outline'
+} from '@heroicons/react/outline';
 import {data} from "autoprefixer";
 import Header from "../components/Head";
 
