@@ -109,7 +109,7 @@ export default function planetary() {
 
     return (
         <>
-            <Header desc={content} href="" img={data.hdurl} title={data.title}/>
+            <Header desc={content} href="" img={data.hdurl} title={data.title +'| 7th.Dec'}/>
             <div className="max-w-7xl py-6 sm:py-12 mx-auto">
                 <div className="space-y-2  text-center">
                     <h2 className="text-4xl font-bold capitalize ">Hình ảnh thiên văn trong ngày</h2>

@@ -63,7 +63,7 @@ export default function OperatingSystem(){
     return (
         <>
             <Header
-                title={'Hệ Điều Hành Dành Cho Máy Tính'}
+                title={'Hệ Điều Hành Dành Cho Máy Tính | 7th.Dec'}
                 img={'https://res.cloudinary.com/blogcuaduc/image/upload/v1639644959/cua-toi/windows-11-icon-logo-6C39629E45-seeklogo.com_f3qt1r.png'}
                 desc={'Tổng hợp link tải các hệ điều hành đang phổ biến hiện nay như Windows, Linux'}
                 href={'https://sat-7thdec.herokuapp.com/operating-system'}

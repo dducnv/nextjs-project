@@ -62,7 +62,7 @@ export default function quote(){
     }
     return(
         <>
-            <Header title="Trích Dẫn" href="" img="https://uploads-ssl.webflow.com/612a3d9cd9c35344a2460d68/616fea3cb4886891f2960f80_logo7th.png" desc=""/>
+            <Header title="Trích Dẫn | 7th.Dec" href="" img="https://uploads-ssl.webflow.com/612a3d9cd9c35344a2460d68/616fea3cb4886891f2960f80_logo7th.png" desc=""/>
             <section className="py-6 bg-violet-600 text-coolGray-50">
                 <div className="container mx-auto flex flex-col items-center justify-center p-4 space-y-8 md:p-10 md:px-24 xl:px-48">
                     <div className="space-y-2 text-center">
