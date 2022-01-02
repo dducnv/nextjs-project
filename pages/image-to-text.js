@@ -86,7 +86,7 @@ export default function ImageToText() {
                 data,
                 {
                     loading: 'Đang Chuyển Đổi...',
-                    success: <b>Thành Công!</b>,
+                    success: <b>Đã Hoàn Thành Chuyển Đổi!</b>,
                     error: <b>Vui Lòng Thử Lại.</b>,
                 }
             );
