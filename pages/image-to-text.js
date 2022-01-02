@@ -255,17 +255,13 @@ export default function ImageToText() {
                         </div>
                         {text === "" || text == null ? "" :
                             <div className="w-full p-3 h-full lg:w-2/3  ">
-                                <label htmlFor="result" className="sr-only">
-                                    Kết Quả
-                                </label>
                                 <textarea
-                                    id="result"
                                     name="result"
                                     rows={3}
                                     value={text}
                                     className="shadow-sm h-72  p-3 focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md"
                                     placeholder="you@example.com"
-                                >{text}</textarea>
+                                />
                             </div>
                         }
 
