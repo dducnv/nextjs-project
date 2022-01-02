@@ -105,10 +105,10 @@ export default function ImageToText() {
     return (
         <>
             <div><Toaster/></div>
-            <Header title={'Chuyển Ảnh Thành Văn Bản'} desc={'Phát hiện và xuất các văn bản có chứa trong hình ảnh và dễ dàng copy.'} img={'https://res.cloudinary.com/blogcuaduc/image/upload/v1641128846/cua-toi/lrb6bfewy7uxne53w4fn.png'}/>
+            <Header title={'Chuyển Định Dạng Thành Văn Bản'} desc={'Phát hiện và xuất các văn bản có chứa trong hình ảnh và dễ dàng copy.'} img={'https://res.cloudinary.com/blogcuaduc/image/upload/v1641128846/cua-toi/lrb6bfewy7uxne53w4fn.png'}/>
             <div className="max-w-7xl py-6 sm:py-12 mx-auto">
                 <div className="space-y-2  text-center">
-                    <h2 className="text-4xl font-bold capitalize ">Chuyển Ảnh Thành Văn Bản</h2>
+                    <h2 className="text-4xl font-bold capitalize ">Chuyển Định Dạng Ảnh Thành Văn Bản</h2>
                     <p className="font-serif text-sm text-coolGray-600">Lưu ý: Hãy chọn ngôn ngữ theo ngôn ngữ trong
                         ảnh.</p>
                 </div>
