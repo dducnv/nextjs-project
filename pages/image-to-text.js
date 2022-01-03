@@ -278,7 +278,8 @@ export default function ImageToText() {
                                             role="img"
                                         />
                                     </Zoom>
-                                    <canvas ref={canvasRef} className="hidden" width={700} height={300}></canvas>
+                                    <canvas ref={canvasRef} className="hidden" width={700} height={300}>
+                                    </canvas>
 
                                 </div>
 
