@@ -41,20 +41,24 @@ const langs = [
         flag: "https://cdn-icons-png.flaticon.com/512/197/197582.png",
     },
 ]
-export default function ImageToText() {
+export default function ImageToText(event) {
     const [selected, setSelected] = useState(langs[0])
     const [imagePath, setImagePath] = useState("");
     const [text, setText] = useState("");
+    const [running, setRun] = useState(false)
     const canvasRef = useRef(null);
     const imageRef = useRef(null);
+
+    const worker = createWorker();
     const handleChange = (event) => {
         setImagePath(URL.createObjectURL(event.target.files[0]))
     }
-    const handleClick = () => {
+    const tesseract = () => {
         if (imagePath == null || imagePath === "") {
             toast.error("Vui Lòng Chọn Ảnh.")
         }
         setText('')
+        setRun(true)
         const canvas = canvasRef.current;
         canvas.width = imageRef.current.width;
         canvas.height = imageRef.current.height;
@@ -62,16 +66,23 @@ export default function ImageToText() {
         ctx.drawImage(imageRef.current, 0, 0);
         ctx.putImageData(preprocessImage(canvas), 0, 0);
         const dataUrl = canvas.toDataURL("image/jpeg");
-        const worker = createWorker();
         const data = (async () => {
-
             await worker.load();
             await worker.loadLanguage(`${selected.value}`);
             await worker.initialize(`${selected.value}`);
             const {data: {text}} = await worker.recognize(`${dataUrl}`);
             setText(text)
+            setRun(false)
+            if (text === "") {
+                toast(
+                    "¯\\_(ツ)_/¯ <br/> Không tìm thấy văn bản nào trong hình ảnh của bạn.",
+                    {
+                        duration: 6000,
+                    }
+                );
+            }
             await worker.terminate();
-        })();
+        })()
         toast.promise(
             data,
             {
@@ -81,12 +92,15 @@ export default function ImageToText() {
             }
         );
     }
+    const handleClick = () => {
+        tesseract();
+    }
 
     function classNames(...classes) {
         return classes.filter(Boolean).join(' ')
     }
 
-    const clearData = () => {
+    const clearData = async () => {
         setText('')
         setImagePath('')
     }
@@ -191,15 +205,17 @@ export default function ImageToText() {
                                 </Listbox>
                                 <button
                                     onClick={clearData}
-                                    className="transition mt-3 lg:mt-0 mx-2 duration-150 ease-in-out hover:bg-red-600 focus:outline-none border bg-red-700 rounded text-white px-8 py-2 text-sm">
+                                    disabled={running}
+                                    className={running  ?"transition mt-3 lg:mt-0 mx-2 duration-150 ease-in-out focus:outline-none border bg-red-400 rounded text-white px-8 py-2 text-sm" : "transition mt-3 lg:mt-0 mx-2 duration-150 ease-in-out hover:bg-red-600 focus:outline-none border bg-red-700 rounded text-white px-8 py-2 text-sm"}>
                                     Xoá
                                 </button>
                             </>
                         }
-                        { imagePath === "" || imagePath == null ? "" :
+                        {imagePath === "" || imagePath == null ? "" :
                             <button
                                 onClick={handleClick}
-                                className="transition mt-3 lg:mt-0 mx-2 duration-150 ease-in-out hover:bg-indigo-600 focus:outline-none border bg-indigo-700 rounded text-white px-8 py-2 text-sm">
+                                disabled={running}
+                                className={running? "transition mt-3 lg:mt-0 mx-2 duration-150 ease-in-out  focus:outline-none border bg-indigo-400 rounded text-white px-8 py-2 text-sm" : "transition mt-3 lg:mt-0 mx-2 duration-150 ease-in-out hover:bg-indigo-600 focus:outline-none border bg-indigo-700 rounded text-white px-8 py-2 text-sm"}>
                                 Chuyển Đổi
                             </button>
                         }
