@@ -1,9 +1,8 @@
-import React, {useState, useEffect, useRef, Fragment} from "react";
-import Tesseract, {createWorker} from 'tesseract.js';
+import React, {useState, useRef, Fragment} from "react";
+import {createWorker} from 'tesseract.js';
 import {Listbox, Transition} from '@headlessui/react'
 import {toast, Toaster} from "react-hot-toast";
 import Zoom from "react-medium-image-zoom";
-import {LazyLoadImage} from "react-lazy-load-image-component";
 import {CheckIcon, SelectorIcon} from "@heroicons/react/outline";
 import {
     PhotographIcon
@@ -46,42 +45,16 @@ export default function ImageToText() {
     const [selected, setSelected] = useState(langs[0])
     const [imagePath, setImagePath] = useState("");
     const [text, setText] = useState("");
-    const [selectedFile, setSelectedFile] = useState()
     const canvasRef = useRef(null);
     const imageRef = useRef(null);
     const handleChange = (event) => {
         setImagePath(URL.createObjectURL(event.target.files[0]))
-        // setImage(`${window.location.origin}/${event.target.files[0].name}`);
-        // const image = preprocessImage(canvasObj, event.target.files[0]);
     }
-    // const handleClick = () => {
-    //     setText('')
-    //     const canvas = canvasRef.current;
-    //     canvas.width = imageRef.current.width;
-    //     canvas.height = imageRef.current.height;
-    //     const ctx = canvas.getContext('2d');
-    //
-    //     ctx.drawImage(imageRef.current, 0, 0);
-    //     ctx.putImageData(preprocessImage(canvas),0,0);
-    //     const dataUrl = canvas.toDataURL("image/jpeg");
-    //     if (imagePath == null || imagePath === "") {
-    //         toast.error("Vui Lòng Chọn Ảnh.")
-    //     } else {
-    //         const worker = createWorker();
-    //         const data = (async () => {
-    //
-    //             await worker.load();
-    //             await worker.loadLanguage(`${selected.value}`);
-    //             await worker.initialize(`${selected.value}`);
-    //             const {data: {text}} = await worker.recognize(`${dataUrl}`);
-    //             setText(text)
-    //             await worker.terminate();
-    //         })();
-    //
-    //     }
-    //
-    // }
     const handleClick = () => {
+        if (imagePath == null || imagePath === "") {
+            toast.error("Vui Lòng Chọn Ảnh.")
+        }
+        setText('')
         const canvas = canvasRef.current;
         canvas.width = imageRef.current.width;
         canvas.height = imageRef.current.height;
@@ -89,7 +62,6 @@ export default function ImageToText() {
         ctx.drawImage(imageRef.current, 0, 0);
         ctx.putImageData(preprocessImage(canvas), 0, 0);
         const dataUrl = canvas.toDataURL("image/jpeg");
-
         const worker = createWorker();
         const data = (async () => {
 
@@ -141,13 +113,11 @@ export default function ImageToText() {
                             </ul>
                         </div>
                     </div>
-
                 </div>
                 <div
                     className={imagePath === "" || imagePath == null ? "my-6 lg:my-12 container px-6 mx-auto flex flex-col lg:flex-row items-start lg:items-center justify-between pb-4" : "my-6 lg:my-12 container px-6 mx-auto flex flex-col lg:flex-row items-start lg:items-center justify-between pb-4 border-b border-gray-300"}>
                     <div/>
                     <div className="mt-6 lg:mt-0 lg:flex items-center">
-
                         {imagePath === "" || imagePath == null ? "" :
                             <>
                                 <Listbox value={selected} onChange={setSelected}>
@@ -155,9 +125,7 @@ export default function ImageToText() {
                                         <>
                                             <Listbox.Label className="block text-sm mx-2 font-medium text-gray-700">Chọn
                                                 Ngôn Ngữ :</Listbox.Label>
-
                                             <div className="mt-1 relative">
-
                                                 <Listbox.Button
                                                     className="relative w-full bg-white border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                                           <span className="flex items-center">
@@ -170,7 +138,6 @@ export default function ImageToText() {
                                             <SelectorIcon className="h-5 w-5 text-gray-400" aria-hidden="true"/>
                                           </span>
                                                 </Listbox.Button>
-
                                                 <Transition
                                                     show={open}
                                                     as={Fragment}
@@ -229,9 +196,8 @@ export default function ImageToText() {
                                     Xoá
                                 </button>
                             </>
-
                         }
-                        {!text === "" || !text == null | imagePath === "" || imagePath == null ? "" :
+                        {text !== "" || text != null | imagePath === "" || imagePath == null ? "" :
                             <button
                                 onClick={handleClick}
                                 className="transition mt-3 lg:mt-0 mx-2 duration-150 ease-in-out hover:bg-indigo-600 focus:outline-none border bg-indigo-700 rounded text-white px-8 py-2 text-sm">
@@ -280,11 +246,8 @@ export default function ImageToText() {
                                     </Zoom>
                                     <canvas ref={canvasRef} className="hidden" width={700} height={300}>
                                     </canvas>
-
                                 </div>
-
                             }
-
                         </div>
                         {text === "" || text == null ? "" :
                             <div className="w-full p-3 h-full lg:w-2/3  ">
@@ -297,7 +260,6 @@ export default function ImageToText() {
                                 />
                             </div>
                         }
-
                     </div>
                 </div>
             </div>
