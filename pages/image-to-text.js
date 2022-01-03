@@ -1,5 +1,5 @@
-import React, {useState, useEffect, Fragment} from "react";
-import {createWorker} from 'tesseract.js';
+import React, {useState, useEffect, useRef, Fragment} from "react";
+import Tesseract, {createWorker} from 'tesseract.js';
 import {Listbox, Transition} from '@headlessui/react'
 import {toast, Toaster} from "react-hot-toast";
 import Zoom from "react-medium-image-zoom";
@@ -9,6 +9,7 @@ import {
     PhotographIcon
 } from '@heroicons/react/outline'
 import Header from "../components/Head";
+import preprocessImage from "../utils/preprocess";
 
 const langs = [
     {
@@ -46,52 +47,67 @@ export default function ImageToText() {
     const [imagePath, setImagePath] = useState("");
     const [text, setText] = useState("");
     const [selectedFile, setSelectedFile] = useState()
-    useEffect(() => {
-        if (!selectedFile) {
-            setImagePath(undefined)
-            return
-        }
-
-        const objectUrl = URL.createObjectURL(selectedFile)
-        setImagePath(objectUrl)
-
-        // free memory when ever this component is unmounted
-        return () => URL.revokeObjectURL(objectUrl)
-    }, [selectedFile])
-    const onSelectFile = e => {
-        setText('');
-        if (!e.target.files || e.target.files.length === 0) {
-            setSelectedFile(undefined)
-            return
-        }
-        // I've kept this example simple by using the first image instead of multiple
-        setSelectedFile(e.target.files[0])
+    const canvasRef = useRef(null);
+    const imageRef = useRef(null);
+    const handleChange = (event) => {
+        setImagePath(URL.createObjectURL(event.target.files[0]))
+        // setImage(`${window.location.origin}/${event.target.files[0].name}`);
+        // const image = preprocessImage(canvasObj, event.target.files[0]);
     }
+    // const handleClick = () => {
+    //     setText('')
+    //     const canvas = canvasRef.current;
+    //     canvas.width = imageRef.current.width;
+    //     canvas.height = imageRef.current.height;
+    //     const ctx = canvas.getContext('2d');
+    //
+    //     ctx.drawImage(imageRef.current, 0, 0);
+    //     ctx.putImageData(preprocessImage(canvas),0,0);
+    //     const dataUrl = canvas.toDataURL("image/jpeg");
+    //     if (imagePath == null || imagePath === "") {
+    //         toast.error("Vui Lòng Chọn Ảnh.")
+    //     } else {
+    //         const worker = createWorker();
+    //         const data = (async () => {
+    //
+    //             await worker.load();
+    //             await worker.loadLanguage(`${selected.value}`);
+    //             await worker.initialize(`${selected.value}`);
+    //             const {data: {text}} = await worker.recognize(`${dataUrl}`);
+    //             setText(text)
+    //             await worker.terminate();
+    //         })();
+    //
+    //     }
+    //
+    // }
     const handleClick = () => {
-        setText('')
-        if (imagePath == null || imagePath === "") {
-            toast.error("Vui Lòng Chọn Ảnh.")
-        } else {
-            const worker = createWorker();
-            const data = (async () => {
+        const canvas = canvasRef.current;
+        canvas.width = imageRef.current.width;
+        canvas.height = imageRef.current.height;
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(imageRef.current, 0, 0);
+        ctx.putImageData(preprocessImage(canvas), 0, 0);
+        const dataUrl = canvas.toDataURL("image/jpeg");
 
-                await worker.load();
-                await worker.loadLanguage(`${selected.value}`);
-                await worker.initialize(`${selected.value}`);
-                const {data: {text}} = await worker.recognize(`${imagePath}`);
-                setText(text)
-                await worker.terminate();
-            })();
-            toast.promise(
-                data,
-                {
-                    loading: 'Đang Chuyển Đổi...',
-                    success: <b>Đã Hoàn Thành Chuyển Đổi!</b>,
-                    error: <b>Vui Lòng Thử Lại.</b>,
-                }
-            );
-        }
+        const worker = createWorker();
+        const data = (async () => {
 
+            await worker.load();
+            await worker.loadLanguage(`${selected.value}`);
+            await worker.initialize(`${selected.value}`);
+            const {data: {text}} = await worker.recognize(`${dataUrl}`);
+            setText(text)
+            await worker.terminate();
+        })();
+        toast.promise(
+            data,
+            {
+                loading: 'Đang Chuyển Đổi...',
+                success: <b>Đã Hoàn Thành Chuyển Đổi!</b>,
+                error: <b>Vui Lòng Thử Lại.</b>,
+            }
+        );
     }
 
     function classNames(...classes) {
@@ -104,13 +120,28 @@ export default function ImageToText() {
     }
     return (
         <>
+            {/*<canvas ref={canvasRef} width={700} height={300}/>*/}
             <div><Toaster/></div>
-            <Header title={'Chuyển Định Dạng Hình Ảnh Thành Văn Bản | 7th.Dec'} href={"https://ngay7thang12.herokuapp.com/image-to-text"} desc={'Phát hiện và xuất các văn bản có chứa trong hình ảnh và dễ dàng copy.'} img={'https://res.cloudinary.com/blogcuaduc/image/upload/v1641128846/cua-toi/lrb6bfewy7uxne53w4fn.png'}/>
+            <Header title={'Chuyển Định Dạng Hình Ảnh Thành Văn Bản | 7th.Dec'}
+                    href={"https://ngay7thang12.herokuapp.com/image-to-text"}
+                    desc={'Phát hiện và xuất các văn bản có chứa trong hình ảnh và dễ dàng copy.'}
+                    img={'https://res.cloudinary.com/blogcuaduc/image/upload/v1641128846/cua-toi/lrb6bfewy7uxne53w4fn.png'}/>
             <div className="max-w-7xl py-6 sm:py-12 mx-auto">
-                <div className="space-y-2  text-center">
-                    <h2 className="text-4xl font-bold capitalize ">Chuyển Định Dạng Hình Ảnh Thành Văn Bản</h2>
-                    <p className="font-serif text-sm text-coolGray-600">Lưu ý: Hãy chọn ngôn ngữ theo ngôn ngữ trong
-                        ảnh.</p>
+                <div className="space-y-2  ">
+                    <h2 className="text-4xl font-bold capitalize text-center">Chuyển Định Dạng Hình Ảnh Thành Văn
+                        Bản</h2>
+                    <div className="m-auto">
+                        <div className="text-center">Lưu ý:
+                            <ul className="  text-sm text-gray-500">
+                                <li>- Hãy chọn ngôn ngữ theo ngôn ngữ trong ảnh.</li>
+                                <li>- Để đảm bảo việc chuyển đôi chính xác, ảnh không nên chứa các chi tiết không liên
+                                    quan đến văn bản (vd: icon).
+                                </li>
+                                <li>- Hãy chọn ngôn ngữ theo ngôn ngữ trong ảnh.</li>
+                            </ul>
+                        </div>
+                    </div>
+
                 </div>
                 <div
                     className={imagePath === "" || imagePath == null ? "my-6 lg:my-12 container px-6 mx-auto flex flex-col lg:flex-row items-start lg:items-center justify-between pb-4" : "my-6 lg:my-12 container px-6 mx-auto flex flex-col lg:flex-row items-start lg:items-center justify-between pb-4 border-b border-gray-300"}>
@@ -224,29 +255,30 @@ export default function ImageToText() {
                                                 className="block text-gray-400 font-normal">Click vào đây để chọn ảnh</span>
                                         </div>
                                     </div>
-                                    <input onChange={onSelectFile} type="file" accept=".png, .jpg, .jpeg"
+                                    <input onChange={handleChange} type="file" accept=".png, .jpg, .jpeg"
                                            className="h-full cursor-pointer w-full opacity-0"/>
                                 </div>
                                 :
                                 <div className="flex justify-center items-center">
                                     <Zoom>
-                                        <LazyLoadImage
+                                        <img
                                             alt={imagePath}
-                                            effect="blur"
                                             src={imagePath}
+                                            ref={imageRef}
                                             className="w-full h-full object-cover  md:object-cover hidden lg:block"
                                             role="img"
                                         />
                                     </Zoom>
                                     <Zoom>
-                                        <LazyLoadImage
+                                        <img
                                             alt={imagePath}
-                                            effect="blur"
                                             src={imagePath}
+                                            ref={imageRef}
                                             className="w-full object-cover object-cover h-full lg:hidden"
                                             role="img"
                                         />
                                     </Zoom>
+                                    <canvas ref={canvasRef} className="hidden" width={700} height={300}></canvas>
 
                                 </div>
 
