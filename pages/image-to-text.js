@@ -48,7 +48,6 @@ export default function ImageToText(event) {
     const [running, setRun] = useState(false)
     const canvasRef = useRef(null);
     const imageRef = useRef(null);
-
     const worker = createWorker();
     const handleChange = (event) => {
         setImagePath(URL.createObjectURL(event.target.files[0]))
@@ -95,11 +94,9 @@ export default function ImageToText(event) {
     const handleClick = () => {
         tesseract();
     }
-
     function classNames(...classes) {
         return classes.filter(Boolean).join(' ')
     }
-
     const clearData = async () => {
         setText('')
         setImagePath('')
