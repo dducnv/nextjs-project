@@ -109,7 +109,6 @@ export default function ImageToText() {
                                 <li>- Để đảm bảo việc chuyển đôi chính xác, ảnh không nên chứa các chi tiết không liên
                                     quan đến văn bản (vd: icon).
                                 </li>
-                                <li>- Hãy chọn ngôn ngữ theo ngôn ngữ trong ảnh.</li>
                             </ul>
                         </div>
                     </div>
