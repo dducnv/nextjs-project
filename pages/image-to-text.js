@@ -197,7 +197,7 @@ export default function ImageToText() {
                                 </button>
                             </>
                         }
-                        {text !== "" || text != null | imagePath === "" || imagePath == null ? "" :
+                        { imagePath === "" || imagePath == null ? "" :
                             <button
                                 onClick={handleClick}
                                 className="transition mt-3 lg:mt-0 mx-2 duration-150 ease-in-out hover:bg-indigo-600 focus:outline-none border bg-indigo-700 rounded text-white px-8 py-2 text-sm">
