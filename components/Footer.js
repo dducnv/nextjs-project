@@ -30,13 +30,13 @@ export default function Footer(){
                     </div>
                     <ul className="flex flex-wrap pl-3 space-x-4 sm:space-x-8">
                         <li>
-                            <a href="https://github.com/DucNV0712">Github</a>
+                            <a href="https://github.com/dducnv0712">Github</a>
                         </li>
                         <li>
-                            <a href="https://www.pinterest.com/Duc_Isme0712">Pinterest</a>
+                            <a href="https://www.pinterest.com/dducnv0712">Pinterest</a>
                         </li>
                         <li>
-                            <a href="https://twitter.com/Duc_isme0712">Twitter</a>
+                            <a href="https://twitter.com/dducnv0712">Twitter</a>
                         </li>
                     </ul>
                 </div>
