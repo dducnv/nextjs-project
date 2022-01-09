@@ -30,6 +30,9 @@ export default function Footer(){
                     </div>
                     <ul className="flex flex-wrap pl-3 space-x-4 sm:space-x-8">
                         <li>
+                            <a href="https://dduc-nv.github.io/my-cv">My CV</a>
+                        </li>
+                        <li>
                             <a href="https://github.com/dducnv0712">Github</a>
                         </li>
                         <li>
