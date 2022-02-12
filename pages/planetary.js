@@ -4,7 +4,8 @@ import {LazyLoadImage} from 'react-lazy-load-image-component';
 import Zoom from 'react-medium-image-zoom'
 import Header from "../components/Head";
 
-export default function planetary() {
+ function  planetary({stars }) {
+     
     // eslint-disable-next-line react-hooks/rules-of-hooks
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const [loading, setLoad] = useState(true)
@@ -12,7 +13,7 @@ export default function planetary() {
     const [content, setContent] = useState('')
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const [data, setData] = useState('');
-
+    
     function dataNasa() {
         fetchData();
         async function fetchData() {
@@ -106,13 +107,14 @@ export default function planetary() {
             </>
         )
     }
-
+   
     return (
+        
         <>
-            <Header desc={content} href="" img={data.hdurl} title={data.title +'| 7th.Dec'}/>
+            <Header desc={stars.explanation} href="" img={stars.hdurl} title={stars.title +'| 7th.Dec'}/>
             <div className="max-w-7xl py-6 sm:py-12 mx-auto">
                 <div className="space-y-2  text-center">
-                    <h2 className="text-4xl font-bold capitalize ">Hình ảnh thiên văn trong ngày</h2>
+                    <h2 className="text-4xl font-bold capitalize "> Hình ảnh thiên văn trong ngày</h2>
                     <p className="font-serif text-sm text-coolGray-600">Dữ Liệu đươc sử dụng: <a
                         className="text-indigo-500" href={"https://api.nasa.gov/"}>Nasa API</a></p>
                 </div>
@@ -121,3 +123,9 @@ export default function planetary() {
         </>
     )
 }
+planetary.getInitialProps = async () => {
+    const res = await fetch('https://api.nasa.gov/planetary/apod?api_key=uJSsAxE9N7A8LAcrQhjRylOcfzK5rCjpPZv1Wza5')
+    const json = await res.json()
+    return { stars: json}
+  }
+  export default planetary
