@@ -4,7 +4,7 @@ import {LazyLoadImage} from 'react-lazy-load-image-component';
 import Zoom from 'react-medium-image-zoom'
 import Header from "../components/Head";
 
- function  planetary({stars }) {
+ function  planetary({data }) {
      
     // eslint-disable-next-line react-hooks/rules-of-hooks
     // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -12,30 +12,9 @@ import Header from "../components/Head";
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const [content, setContent] = useState('')
     // eslint-disable-next-line react-hooks/rules-of-hooks
-    const [data, setData] = useState('');
-    
-    function dataNasa() {
-        fetchData();
-        async function fetchData() {
-            try {
-                const res = await fetch('https://api.nasa.gov/planetary/apod?api_key=uJSsAxE9N7A8LAcrQhjRylOcfzK5rCjpPZv1Wza5')
-                const dataNasa = await res.json();
-                setData(dataNasa)
-                setContent(dataNasa.explanation)
-                setLoad(false)
-            }catch (err){
-
-            }
-        }
-    }
-    // eslint-disable-next-line react-hooks/rules-of-hooks,react-hooks/exhaustive-deps
-    useEffect(async () => {
-        dataNasa();
-
-    }, [])
 
     function nasaRender() {
-        if (loading) {
+        if ( data === null) {
             return (
                 <>
                     <div className=" py-9 md:py-9 lg:py-13">
@@ -94,7 +73,7 @@ import Header from "../components/Head";
                                 <h1 className="dark:text-white mt-4 text-center md:text-left text-4xl md:text-4xl xl:text-4xl font-semibold text-gray-900">{data.title}</h1>
                                 <p className="dark:text-white text-center md:text-left mt-2 text-sm md:mt-0 py-3 font-medium leading-3 text-gray-400">{data.date}</p>
                                 <p className="dark:text-gray-300 lg:mt-3 text-base  text-gray-600">
-                                    {content}
+                                    {data.explanation}
                                 </p>
                                 <p className="dark:text-white mt-4 text-xs font-medium leading-3 text-gray-600">&copy;copyright
                                     - <a
@@ -111,7 +90,7 @@ import Header from "../components/Head";
     return (
         
         <>
-            <Header desc={stars.explanation} href="" img={stars.hdurl} title={stars.title +'| 7th.Dec'}/>
+            <Header desc={data.explanation} href="" img={data.hdurl} title={data.title +' | 7th.Dec'}/>
             <div className="max-w-7xl py-6 sm:py-12 mx-auto">
                 <div className="space-y-2  text-center">
                     <h2 className="text-4xl font-bold capitalize "> Hình ảnh thiên văn trong ngày</h2>
@@ -125,7 +104,12 @@ import Header from "../components/Head";
 }
 planetary.getInitialProps = async () => {
     const res = await fetch('https://api.nasa.gov/planetary/apod?api_key=uJSsAxE9N7A8LAcrQhjRylOcfzK5rCjpPZv1Wza5')
-    const json = await res.json()
-    return { stars: json}
+    const data = await res.json()
+    if (!data) {
+        return {
+            data: null,
+        }
+      }
+    return { data: data}
   }
   export default planetary
